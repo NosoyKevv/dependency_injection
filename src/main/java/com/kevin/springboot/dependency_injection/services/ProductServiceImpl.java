@@ -1,8 +1,8 @@
 package com.kevin.springboot.dependency_injection.services;
 
 import com.kevin.springboot.dependency_injection.models.Product;
-import com.kevin.springboot.dependency_injection.repositories.ProductRepositoryImpl;
-import com.kevin.springboot.dependency_injection.services.ProductService;
+import com.kevin.springboot.dependency_injection.repositories.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,7 +11,9 @@ import java.util.stream.Collectors;
 @Component
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepositoryImpl repository = new ProductRepositoryImpl();
+    @Autowired//Nos pasa una instancia que esta enel contenedro Principio hollywood nos nos llames nosotros te llamamos
+    private ProductRepository repository; //no depende de una instancia (new) ahora toodo lo maneja el controlador
+    //private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 
     @Override
     public List<Product> findAll() {
