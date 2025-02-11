@@ -3,6 +3,7 @@ package com.kevin.springboot.dependency_injection.services;
 import com.kevin.springboot.dependency_injection.models.Product;
 import com.kevin.springboot.dependency_injection.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,13 +11,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-
+    //    @Autowired
+    //  @Qualifier("productRepositoryImpl") //Por atributo se hace asi
     //@Autowired//Nos pasa una instancia que esta enel contenedro Principio hollywood nos nos llames nosotros te llamamos
     private ProductRepository repository; //no depende de una instancia (new) ahora toodo lo maneja el controlador
     //private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 
-    public ProductServiceImpl(ProductRepository repository) {//Cuando tenemos un constructor podemos inyectar mediante el constructor y no es necesario el @Autowired
-        this.repository = repository;
+    public ProductServiceImpl(@Qualifier("productRepositoryImpl") ProductRepository repository) {//Cuando tenemos un constructor podemos inyectar mediante el constructor y no es necesario el @Autowired
+        this.repository = repository;//@Qualifier selecciona un componente por su nombre y lova a inyectar
     }
 
     /* @Autowired
