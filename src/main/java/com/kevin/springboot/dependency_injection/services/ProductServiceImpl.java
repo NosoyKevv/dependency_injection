@@ -11,9 +11,19 @@ import java.util.stream.Collectors;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired//Nos pasa una instancia que esta enel contenedro Principio hollywood nos nos llames nosotros te llamamos
+    //@Autowired//Nos pasa una instancia que esta enel contenedro Principio hollywood nos nos llames nosotros te llamamos
     private ProductRepository repository; //no depende de una instancia (new) ahora toodo lo maneja el controlador
     //private ProductRepositoryImpl repository = new ProductRepositoryImpl();
+
+    public ProductServiceImpl(ProductRepository repository) {//Cuando tenemos un constructor podemos inyectar mediante el constructor y no es necesario el @Autowired
+        this.repository = repository;
+    }
+
+    /* @Autowired
+    public void setRepository(ProductRepository repository) {
+        this.repository = repository;
+    }//Se puede inyerctar mediante los metodos setters
+    */
 
     @Override
     public List<Product> findAll() {
@@ -30,6 +40,5 @@ public class ProductServiceImpl implements ProductService {
     public Product findById(Long id) {
         return repository.findById(id);
     }
-
 
 }
