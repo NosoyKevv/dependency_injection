@@ -3,12 +3,12 @@ package com.kevin.springboot.dependency_injection.services;
 import com.kevin.springboot.dependency_injection.models.Product;
 import com.kevin.springboot.dependency_injection.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired//Nos pasa una instancia que esta enel contenedro Principio hollywood nos nos llames nosotros te llamamos
