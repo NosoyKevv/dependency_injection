@@ -1,11 +1,13 @@
 package com.kevin.springboot.dependency_injection.repositories;
 
 import com.kevin.springboot.dependency_injection.models.Product;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Primary
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
     private List<Product> data;
