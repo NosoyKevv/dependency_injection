@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Redmi note 10",
+    "price": 500
+  },
+  {
+    "id": 2,
+    "name": "Kamura Reddragon",
+    "price": 200
+  },
+  {
+    "id": 3,
+    "name": "Monitor 28pulgadas",
+    "price": 480
+  },
+  {
+    "id": 4,
+    "name": "Laptop vivobook",
+    "price": 1200
+  }
+]

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Collections;
 import java.util.List;
 
-
 @Primary
 @Repository
 public class ProductRepositoryFoo implements ProductRepository {
